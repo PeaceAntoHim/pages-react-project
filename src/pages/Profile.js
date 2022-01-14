@@ -1,3 +1,8 @@
 export default function Profile() {
-    return <h1>Ini adalah halaman profile</h1>
+    return (
+        <section>
+            <h1>Profile page</h1>
+            <p>Halo nama saya adalah frans sebastian saya lulus dari universitas harvard/Binus</p>
+        </section>
+    );
 }
