@@ -1,8 +1,8 @@
 export default function Contact() {
     return (
-        <section>
-            <h1>Contact Page</h1>
-            <p>Kamu dapat menghubungiku di bawah ini: </p>
+        <section className="section">
+            <h1 className="section-title">Contact Page</h1>
+            <p className="section-description">Kamu dapat menghubungiku di bawah ini: </p>
                 <ul>
                     <li>WA: 085217095294</li>
                     <li>Email: stefanusfranssebastian@gmail.com</li>

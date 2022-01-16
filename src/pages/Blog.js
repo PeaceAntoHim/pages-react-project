@@ -22,19 +22,19 @@ export default function Blog() {
     }, []);
 
     return  (
-        <section>
-            <h1>Blog Page</h1>
-            <p>Berikut ini adalah tulisan-tulisan ku tapi boong</p>
+        <section className="section">
+            <h1 clssName="section-title">Blog Page</h1>
+            <p className="section-description">Berikut ini adalah tulisan-tulisan ku tapi boong</p>
             {loading && (<i>Loading articles ... </i>)}
                 {!loading && (
-                    <div>
+                    <div className="articles">
                         {articles.map(function(article) {
                             return(
-                                <article key={article.id}>
-                                    <h2>
+                                <article key={article.id} className="article">
+                                    <h2 className="article-title">
                                         <Link to={`/blog/${article.id}`}>{article.title}></Link>
                                     </h2>
-                                    <time>
+                                    <time className="article-time">
                                         {new Date(article.publishedAt).toLocaleDateString()}
                                     </time>
                                 </article>
