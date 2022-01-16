@@ -34,14 +34,14 @@ export default function Blog() {
                                     <h2>
                                         <Link to={`/blog/${article.id}`}>{article.title}></Link>
                                     </h2>
-                                    <date>
+                                    <time>
                                         {new Date(article.publishedAt).toLocaleDateString()}
-                                    </date>
+                                    </time>
                                 </article>
                             )
-                        })};
+                        })}
                     </div>
-                )};
+                )}
         </section>
 
     )
