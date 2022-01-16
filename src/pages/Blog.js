@@ -8,6 +8,7 @@ export default function Blog() {
 
     /* Fetch the api */
     useEffect(function () {
+        document.title = 'Blog';
         async function getArticles() {
             const request = await fetch(
                 'https://api.spaceflightnewsapi.net/v3/articles'
@@ -23,7 +24,7 @@ export default function Blog() {
 
     return  (
         <section className="section">
-            <h1 clssName="section-title">Blog Page</h1>
+            <h1 className="section-title">Blog Page</h1>
             <p className="section-description">Berikut ini adalah tulisan-tulisan ku tapi boong</p>
             {loading && (<i>Loading articles ... </i>)}
                 {!loading && (

@@ -1,6 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-  width: 715px;
+  width: 815px;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid #eee;
@@ -25,7 +28,7 @@
   font-size: 18px;
   color: blue;
   display: inline-block;
-  flex: 1 auto;
+  flex: 1 1 0;
   text-align: center;
   padding: 10px 0;
   text-decoration: none;
@@ -45,10 +48,12 @@
 
 .section-title {
   margin-top: 0;
+  text-align: center;
 }
 
 .section-description {
   line-height: 24px;
+  text-align: center;
 }
 
 .articles {
@@ -58,6 +63,7 @@
 .article {
   border-bottom: 1px solid #eee;
   padding: 20px 0;
+  
 }
 
 .article-title {
@@ -76,14 +82,27 @@
 .article-time {
   color: #999;
   font-size: 12px;
+  text-align: left;
+}
+
+.article-image {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.article-summary {
+  line-height: 26px;
+  margin-top: 0;
+}
+
+.article-source {
+  color: #999;
 }
 
 
-
-
 /* Mobile Device stylw */
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .App {
-    width: 400px;
+    width: 100%;
   }
 }

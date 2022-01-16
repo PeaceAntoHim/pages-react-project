@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useState } from "react/cjs/react.development"; 
+// import { useState } from "react/cjs/react.development"; 
 
 export default function BlogDetail() {
     const params = useParams();
@@ -8,7 +8,8 @@ export default function BlogDetail() {
     const [loading, setLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
 
-    useEffect(function() {
+    useEffect(
+        function() {
         async function getArticle() {
             const request = await fetch(
                 `https://api.spaceflightnewsapi.net/v3/articles/${params.id}`
@@ -21,6 +22,7 @@ export default function BlogDetail() {
 
             const response = await request.json();
             
+            document.title = response.title;
             setArticle(response);
             setLoading(false);
         } 
@@ -33,18 +35,20 @@ export default function BlogDetail() {
     }
 
     return(
-        <section>
+        <section className="section">
             {loading ? (
                 <i>Loading Article</i>
             ) : (
-                <article>
-                    <h1 className="section-title">{article.title}</h1>
-                        <time>{new Date(article.publishedAt).toLocaleDateString()}</time>
-                            <img src={article.imageUrl} alt={article.title} />
-                                <p>{article.summary}</p>
-                                    <p>
-                                    Source: {'  '} 
-                                    <a href={article.url} target="_blank" rel="noreferrer">
+                <article className="article">
+                    <h1 className="article-title">{article.title}</h1>
+                        <time className="article-time">
+                            {new Date(article.publishedAt).toLocaleDateString()}
+                        </time>
+                        <img src={article.imageUrl} alt={article.title} className="article-image" />
+                            <p className="article-summary">{article.summary}</p>
+                                <p className="article-source">
+                                Source: {'  '} 
+                                <a href={article.url} target="_blank" rel="noreferrer">
                                 {article.newsSite}
                             </a>
                         </p> 
